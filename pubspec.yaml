@@ -7,8 +7,10 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
+  convex_bottom_bar: ^3.2.0
   flutter:
     sdk: flutter
+  flutter_carousel_widget: ^2.2.0
   flutter_screenutil: ^5.9.3
   get: ^4.6.6
   supabase: ^2.1.3
@@ -20,3 +22,17 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/fonts/
+    - assets/icons/
+
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/NunitoSans-Regular.ttf
+
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins.regular.ttf
