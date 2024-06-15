@@ -41,8 +41,8 @@ class SigninView extends StatelessWidget {
                     Container(
                        decoration: BoxDecoration(color: Colors.grey.shade200,borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.only(left: 8),
-                       width: 330.w,
-                      height: 60.h,
+                       width: 320.w,
+                      height: 50.h,
                       child: TextFormField(
                         maxLines: 1,
                         decoration: InputDecoration(
@@ -69,8 +69,8 @@ class SigninView extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(color: Colors.grey.shade200,borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.only(left: 8),
-                      width: 330.w,
-                      height: 60.h,
+                      width: 320.w,
+                      height: 50.h,
                       child: TextField(
                         maxLines: 1,
                         decoration: InputDecoration(
@@ -92,17 +92,20 @@ class SigninView extends StatelessWidget {
             ],
           ),
           Expanded(child: Container()),
-        Container(
-          width: 330.w,
-          height: 60.w,
+        Align(
           alignment: Alignment.center,
-          decoration: BoxDecoration(color: appColors.appPrimary,borderRadius: BorderRadius.circular(10)),
-        child:TextLable.appText("Sign In",size:20.sp,fontWeight: FontWeight.w700,color:appColors.screenBg ),
-          
+          child: Container(
+            width: 320.w,
+            height: 50.w,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(color: appColors.appPrimary,borderRadius: BorderRadius.circular(10)),
+          child:TextLable.appText("Sign In",size:20.sp,fontWeight: FontWeight.w700,color:appColors.screenBg ),
+            
+          ),
         ),
        SizedBox(height: 4.h,),
            Padding(
-             padding:  EdgeInsets.only(left: 18.w,right: 18.w),
+             padding:  EdgeInsets.only(left: 29.w,right: 29.w),
              child: Row(
               children: [
                 TextLable.appTextPoppins("Don't have an account?",size: 16.sp,fontWeight: FontWeight.w600,color:Colors.black ),SizedBox(width: 2.w,),
