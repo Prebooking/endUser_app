@@ -1,6 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:pre_booking/screen/AuthenticationScreen/SignInScreenMain.dart';
+import 'package:pre_booking/screen/AuthenticationScreen/View/authReportBt.dart';
+import 'package:pre_booking/screen/AuthenticationScreen/View/authTitleView.dart';
+import 'package:pre_booking/screen/DashboardScreen/DashboardScreenMain.dart';
 import 'package:pre_booking/utils/appColors.dart';
+import 'package:pre_booking/utils/inputTextField.dart';
 import 'package:pre_booking/utils/textLabel.dart';
 
 class SignUpView extends StatelessWidget {
@@ -14,158 +22,38 @@ class SignUpView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 113.h,
+            height: 29.h,
           ),
-          Row(
-            children: [
-              TextLable.appTextPoppins("Hey",
-                  size: 32.sp,
-                  fontWeight: FontWeight.w600,
-                  color: appColors.appPrimary),
-              SizedBox(
-                width: 4.w,
-              ),
-              TextLable.appTextPoppins("Foodie 👋🏼",
-                  size: 32.sp,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black),
-            ],
-          ),
-          Row(
-            children: [
-              TextLable.appTextPoppins("Welcome to",
-                  size: 24.sp,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black),
-              SizedBox(
-                width: 4.w,
-              ),
-              TextLable.appTextPoppins("Prebooking",
-                  size: 25.sp,
-                  fontWeight: FontWeight.w700,
-                  color: appColors.appPrimary),
-            ],
-          ),
-          TextLable.appTextPoppins("Crowd is waiting for you... ",
-              size: 15.sp,
-              fontWeight: FontWeight.w500,
-              color: appColors.appTextGrey),
-          SizedBox(
-            height: 18.h,
-          ),
-          TextLable.appText("Enter your name",
-              size: 13.sp, fontWeight: FontWeight.w600, color: Colors.black),
-          SizedBox(
-            height: 9.h,
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(10)),
-            padding: EdgeInsets.only(left: 8),
-            width: 320.w,
-            height: 50.h,
-            child: TextFormField(
-              maxLines: 1,
-              decoration: InputDecoration(
-                  //  focusColor: appColors.appTextGrey,
-                  hintText: "test@gmail.com",
-                  hintStyle: TextStyle(
-                    fontFamily: "Nunito",
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16.sp,
-                  ),
-                  // fillColor:appColors.appTextGrey,
-                  border: InputBorder.none),
+          Expanded(
+              child: SingleChildScrollView(
+            child: Column(
+              children: [
+                authTitleView(),
+                SizedBox(
+                  height: 10.h,
+                ),
+                InputTextField(title: "Enter your name", hint: "John Luther"),
+                SizedBox(
+                  height: 17.h,
+                ),
+                InputTextField(
+                    title: "Enter your email id", hint: "test@gmail.com"),
+                SizedBox(
+                  height: 17.h,
+                ),
+                InputTextField(title: "Enter your password", hint: "Password"),
+                SizedBox(
+                  height: 4.h,
+                ),
+                AuthReportButton(),
+              ],
             ),
-          ),
-          SizedBox(
-            height: 17.h,
-          ),
-          TextLable.appText("Enter your email id",
-              size: 13.sp, fontWeight: FontWeight.w600, color: Colors.black),
-          SizedBox(
-            height: 9.h,
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(10)),
-            padding: EdgeInsets.only(left: 8),
-            width: 320.w,
-            height: 50.h,
-            child: TextFormField(
-              maxLines: 1,
-              decoration: InputDecoration(
-                  //  focusColor: appColors.appTextGrey,
-                  hintText: "test@gmail.com",
-                  hintStyle: TextStyle(
-                    fontFamily: "Nunito",
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16.sp,
-                  ),
-                  // fillColor:appColors.appTextGrey,
-                  border: InputBorder.none),
-            ),
-          ),
-          SizedBox(
-            height: 17.h,
-          ),
-          TextLable.appText("Enter your Password",
-              size: 13.sp, fontWeight: FontWeight.w600, color: Colors.black),
-          SizedBox(
-            height: 9.h,
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(10)),
-            padding: EdgeInsets.only(left: 8),
-            width: 320.w,
-            height: 50.h,
-            child: TextField(
-                maxLines: 1,
-                decoration: InputDecoration(
-                  hintText: "Password",
-                  hintStyle: TextStyle(
-                      fontFamily: "Nunito",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16.sp,
-                      color: appColors.appTextGrey),
-                  border: InputBorder.none,
-                )),
-          ),
-          SizedBox(
-            height: 4.h,
-          ),
-          Row(
-            children: [
-              Expanded(child: Container()),
-              TextLable.appTextPoppins("Having issues?",
-                  size: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black),
-              SizedBox(
-                width: 2.w,
-              ),
-              TextLable.appTextPoppins("Contact us",
-                  size: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  color: appColors.appPrimary),
-            ],
-          ),
-          Expanded(child: Container()),
-          Align(
-            alignment: Alignment.center,
+          )),
+          GestureDetector(
+            onTap: () {
+              Get.to(() => DashboardScreenMain(),
+                  transition: Transition.rightToLeft);
+            },
             child: Container(
               width: 320.w,
               height: 50.w,
@@ -180,28 +68,31 @@ class SignUpView extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 4.h,
+            height: 10.h,
           ),
           Padding(
             padding: EdgeInsets.only(left: 29.w, right: 29.w),
             child: Row(
               children: [
-                TextLable.appTextPoppins("Already have an account?",
-                    size: 16.sp,
-                    fontWeight: FontWeight.w600,
+                TextLable.appTextPoppins("Already have an account? ",
+                    size: 14.sp,
+                    fontWeight: FontWeight.w500,
                     color: Colors.black),
-                SizedBox(
-                  width: 2.w,
+                GestureDetector(
+                  onTap: () {
+                    Get.offAll(() => SignInScreenMain(),
+                        transition: Transition.rightToLeft);
+                  },
+                  child: TextLable.appTextPoppins("Sign In",
+                      size: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: appColors.appPrimary),
                 ),
-                TextLable.appTextPoppins("Sign In",
-                    size: 16.sp,
-                    fontWeight: FontWeight.w600,
-                    color: appColors.appPrimary),
               ],
             ),
           ),
           SizedBox(
-            height: 55.h,
+            height: 25.h,
           )
         ],
       ),

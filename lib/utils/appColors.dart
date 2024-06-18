@@ -5,4 +5,5 @@ class appColors {
   static Color appPrimary = Color(0xffBB231E);
   static Color appYellow = Color(0xffD0B952);
   static Color appTextGrey = Color(0xff616161);
+  static Color appLike = Color(0xffFF5F42);
 }

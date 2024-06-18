@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:pre_booking/screen/AuthenticationScreen/SignUpScreenMain.dart';
 import 'package:pre_booking/screen/DashboardScreen/DashboardScreenMain.dart';
-import 'package:pre_booking/screen/HotelOverViewScreen/views/Overview.dart';
+import 'package:pre_booking/screen/HotelOverViewScreen/Overview.dart';
 
 void main() {
   runApp(PrebookingApp());
@@ -18,7 +18,7 @@ class PrebookingApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, child) => GetMaterialApp(
-        home: OvervieScreen(),
+        home: SignUpScreenMain(),
       ),
     );
   }

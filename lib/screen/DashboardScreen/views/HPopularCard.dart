@@ -3,6 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:pre_booking/screen/HotelOverViewScreen/Overview.dart';
+import 'package:pre_booking/screen/HotelOverViewScreen/views/OverviewViewScreen.dart';
 import 'package:pre_booking/utils/appColors.dart';
 import 'package:pre_booking/utils/appIcons.dart';
 import 'package:pre_booking/utils/textLabel.dart';
@@ -15,7 +18,9 @@ class HPopularCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(right: 24.w),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Get.to(() => OvervieScreen(), transition: Transition.rightToLeft);
+        },
         child: Stack(
           children: [
             SizedBox(
@@ -57,7 +62,6 @@ class HPopularCard extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                         size: 16.sp,
                         color: Colors.white),
-                      
                     TextLable.appText(
                         "Non-veg Arabian Drinks".split(" ").join("  ●  "),
                         fontWeight: FontWeight.w600,

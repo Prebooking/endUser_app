@@ -7,13 +7,16 @@ class TextLable {
       FontWeight? fontWeight = null,
       double? size = null,
       int? maxLine,
+      TextDecoration? decoration,
       Color? color}) {
     return Text(
       text ?? "",
       maxLines: maxLine,
+     
       style: TextStyle(
         fontFamily: fontFamily,
         fontSize: size,
+          decoration: decoration,
         fontWeight: fontWeight,
         color: color,
       ),
