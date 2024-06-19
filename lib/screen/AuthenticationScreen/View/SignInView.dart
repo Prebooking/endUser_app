@@ -51,6 +51,7 @@ class SigninView extends StatelessWidget {
             child: Container(
               width: 320.w,
               height: 50.w,
+              margin: EdgeInsets.only(left: 6.w),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: appColors.appPrimary,
