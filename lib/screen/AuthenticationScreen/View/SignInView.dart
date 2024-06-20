@@ -21,6 +21,9 @@ class SigninView extends StatelessWidget {
       child: Column(
         //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 29.h,
+          ),
           Expanded(
               child: SingleChildScrollView(
             child: Column(
