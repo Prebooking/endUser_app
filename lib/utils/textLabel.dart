@@ -14,6 +14,7 @@ class TextLable {
       maxLines: maxLine,
      
       style: TextStyle(
+        
         fontFamily: fontFamily,
         fontSize: size,
           decoration: decoration,

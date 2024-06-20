@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pre_booking/screen/DashboardScreen/views/BookingView.dart';
 import 'package:pre_booking/screen/DashboardScreen/views/DashboardView.dart';
+import 'package:pre_booking/screen/ProfileScreen/views/ProfileScreen.dart';
 import 'package:pre_booking/utils/appColors.dart';
 import 'package:pre_booking/utils/appIcons.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -73,7 +74,7 @@ class _DashboardScreenMainState extends State<DashboardScreenMain> {
       ),
       body: PageView(
         controller: pageCtrl,
-        children: [DashboardView(), BookingListView()],
+        children: [DashboardView(), BookingListView(),ProfileScreen()],
       ),
     );
   }
