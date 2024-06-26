@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "705701037491",
+    "project_id": "prebooking-7f267",
+    "storage_bucket": "prebooking-7f267.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705701037491:android:5539f92c8f1631850b77c6",
+        "android_client_info": {
+          "package_name": "com.example.pre_booking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2UiQw0A2H1ByoPb9sYJJM4lZ-FMAi7OM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

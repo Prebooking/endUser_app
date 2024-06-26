@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:pre_booking/screen/DashboardScreen/model/popularHotelModel.dart';
 import 'package:pre_booking/screen/HotelOverViewScreen/Overview.dart';
 import 'package:pre_booking/screen/HotelOverViewScreen/views/OverviewViewScreen.dart';
 import 'package:pre_booking/utils/appColors.dart';
@@ -11,12 +12,13 @@ import 'package:pre_booking/utils/appIcons.dart';
 import 'package:pre_booking/utils/textLabel.dart';
 
 class HPopularCard extends StatelessWidget {
-  HPopularCard({super.key});
+  popularHotelModel model;
+  HPopularCard({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 24.w),
+      // margin: EdgeInsets.only(right: 24.w),
       child: InkWell(
         onTap: () {
           Get.to(() => OvervieScreen(), transition: Transition.rightToLeft);
@@ -29,7 +31,7 @@ class HPopularCard extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image.network(
-                    "https://img.restaurantguru.com/r8eb-Razi-Arabia-design.jpg",
+                    model.hotelImage!,
                     fit: BoxFit.cover,
                   ),
                 )),
@@ -58,18 +60,17 @@ class HPopularCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextLable.appText("Razi Arabia",
+                    TextLable.appText(model.hotelName ?? "--:--:--",
                         fontWeight: FontWeight.w700,
                         size: 16.sp,
                         color: Colors.white),
                     TextLable.appText(
-                        "Non-veg Arabian Drinks".split(" ").join("  ●  "),
+                        model.hotelCategory!.split(" ").join("  ●  "),
                         fontWeight: FontWeight.w600,
                         size: 11.sp,
                         color: Color.fromARGB(246, 239, 239, 239)
                             .withOpacity(.85)),
-                    TextLable.appText(
-                        "Kalarkood , Alappuzha , Near Alappuzha Bypass",
+                    TextLable.appText(model.hotelAddress ?? "--:--:--",
                         fontWeight: FontWeight.w600,
                         size: 10.sp,
                         color: Color.fromARGB(255, 198, 193, 193))
@@ -92,29 +93,30 @@ class HPopularCard extends StatelessWidget {
                         appIcons.ratingStar,
                         width: 17.w,
                       ),
-                      TextLable.appText(" 4.9 ",
+                      TextLable.appText(" ${model.rating} ",
                           size: 15.sp,
                           fontWeight: FontWeight.w700,
                           color: appColors.appTextGrey)
                     ],
                   ),
                 )),
-            Positioned(
-                top: 18.h,
-                right: 18.w,
-                child: Container(
-                  width: 38.w,
-                  height: 38.w,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      color: Color(0xffD9D9D9).withOpacity(.17),
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white)),
-                  child: Image.asset(
-                    appIcons.favorite,
-                    width: 24.w,
-                  ),
-                ))
+            if (false)
+              Positioned(
+                  top: 18.h,
+                  right: 18.w,
+                  child: Container(
+                    width: 38.w,
+                    height: 38.w,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Color(0xffD9D9D9).withOpacity(.17),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white)),
+                    child: Image.asset(
+                      appIcons.favorite,
+                      width: 24.w,
+                    ),
+                  ))
           ],
         ),
       ),
